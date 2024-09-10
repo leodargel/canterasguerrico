@@ -1,0 +1,188 @@
+/* Reset básico para evitar inconsistencias entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: url('tu-imagen-de-fondo.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-attachment: fixed; /* Mantiene la imagen fija durante el desplazamiento */
+}
+
+/* Capa de desenfoque y color para mejorar la legibilidad */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Menos oscuro para permitir que se vea más la imagen de fondo */
+    z-index: -1; /* Coloca el filtro detrás del contenido */
+    backdrop-filter: blur(2px); /* Reduce el desenfoque para que la imagen sea más visible */
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(232, 244, 228, 0.8); /* Verde suave semi-transparente */
+    backdrop-filter: blur(2px); /* Difumina un poco el fondo del encabezado */
+}
+
+header img {
+    max-width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    background: none; /* Elimina el fondo blanco para que solo se vea la imagen de fondo */
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Estilos para la sección de presentación */
+#presentacion {
+    position: relative;
+    margin-bottom: 40px; /* Espacio entre la presentación y productos */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco más transparente (60%) */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar la sección */
+    text-align: center; /* Centra el texto */
+}
+
+#presentacion h2 {
+    font-size: 2.5em; /* Tamaño de fuente grande para destacar */
+    color: #2c2c2c; /* Color más oscuro para el título */
+}
+
+#presentacion p {
+    font-size: 1.2em; /* Tamaño de fuente aumentado para el párrafo */
+    color: #333; /* Color oscuro para mejorar la legibilidad */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+/* Estilos de los productos */
+.product-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre elementos */
+    justify-content: center;
+}
+
+.product-item {
+    position: relative;
+    text-align: center;
+}
+
+.product-item img {
+    width: 324px; /* Tamaño aumentado un 20% más */
+    height: 216px; /* Tamaño ajustado proporcionalmente */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #004d00; /* Verde oscuro */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.product-btn:hover {
+    background-color: #0e33ba; /* Verde más oscuro al pasar el mouse */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección para separar productos secos y lavados */
+.productos-secos,
+.productos-lavados {
+    margin-bottom: 40px; /* Espacio entre las secciones de productos */
+    background: rgba(255, 255, 255, 0.3); /* Fondo blanco semi-transparente (30%) */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.productos-secos h3,
+.productos-lavados h3 {
+    margin-bottom: 20px; /* Espacio debajo de los subtítulos */
+}
+
+/* Estilos para los modales */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1; /* Asegurar que esté encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Agregar scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #004d00; /* Verde oscuro como en Holcim */
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background-color: #003300; /* Verde más oscuro al pasar el mouse */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
